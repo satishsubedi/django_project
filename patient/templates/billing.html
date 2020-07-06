@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+ 
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='header'>
+            <p class='title'>Invoice No. {{id}} </p>
+        </div>
+    <div>
+    <div class='details'>   
+        
+        <img src="D:\project\venv\medical\{{id}}.png" width="100" height="50"> 
+       
+        Bill to:{{user}} <br/>        
+        Date:{{created_date}} <br/>
+        <table>
+            <thead>
+            <tr>
+            <th>TestType</th>
+            <th>Rate</th>
+            <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for item in lab_item.all %}
+            <tr>
+            <td>  {{ item }}<br/> </td>
+            <td>  {{item.rate}} </td>
+            <td>  {{item.rate}} </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            
+            </table>
+    
+    
+        <br/>
+         <br/>
+        total:{{total}}<br/>
+        vat:{{vat}} <br/>
+        grandtotal:{{grandtotal}} <br/>
+
+        <hr class='hrItem' />
+    </div>
+</div>
+</body>
+</html>

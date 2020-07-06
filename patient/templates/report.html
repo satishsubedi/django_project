@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+  <style>
+      
+      
+  </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='header'>
+            <p class='title'> </p>
+        </div>
+    <div>
+    <div class='details'>   
+        
+        <img src="D:\project\venv\medical\{{id}}.png" width="100" height="50"> <br/>
+
+        PATIENT NO : {{id}}<br/>
+        Patient Name:{{user}} <br/>        
+        Date:{{created_date}} <br/>
+        <table>
+            <thead>
+            <tr>
+            <th>TestType</th>
+            <th>CPT Code</th>
+            <th>Units</th>
+            <th>Reference Range</th>
+            <th>Results</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for item in lab_item.all %}
+            <tr>
+            <td>  {{ item }} </td>
+            <td>  {{item.cpt_code}} </td>
+            <td>  {{item.units}} </td>
+            <td>  {{item.reference_range}} </td>
+            {% endfor %} 
+            </tr>
+
+            <tr> {% for i in results %}</tr>
+               <td>  {{i}} </td>
+                 {% endfor %}
+                 </td>
+            
+                
+               
+                
+            
+            </tbody>
+            </table>
+    
+        <br/>
+         
+
+        <hr class='hrItem' />
+    </div>
+</div>
+</body>
+</html>
